@@ -25,68 +25,52 @@ function draw(){
 
 
     for(let i=0;i<4;i++){
-       fill(255,0,0);
-       noStroke();
-       let rx=windowWidth/i;
-       let ry=windowHeight/i*2;
-       const d=70;
-      rect(rx,ry,d,d);
 
-      if(x-120< rx && rx <x+50 && y-120< ry && ry <y+50){
-        drawrect();
+      // let rx=windowWidth/i;
+      // let ry=windowHeight/i*2;
+      // const d=70;
+
+
+      drawrect();
+       // noStroke();
+
+      // rect(rx,ry,d,d);
+
+      // if(x-120< rx && rx <x+50 && y-120< ry && ry <y+50){
+      //   i++;
       }
 }
 
 function drawrect(){
   push();
-  fill(255,0,0);
-  let rx=windowWidth/i;
-  let ry=windowHeight/i*2;
+  noStroke();
+  frameRate(10);
+
+  let rx=windowWidth/random(windowWidth)*150;
+  let ry=windowHeight/random(windowHeight)*100;
   const d=70;
+  if(x-120< rx && rx <x+50 && y-120< ry && ry <y+50){
+    noFill();
+  }
+  else{
+    fill(255,0,0);
+  }
+  // fill(255,0,0);
+
   rect(rx,ry,d,d);
-  // translate(i*20,i*-20);
+
   pop();
 }
 
 if(i=4){
-  fill(0);
-  noStroke();
-  textSize(80);
-  text('CLEAR!',windowWidth/2,windowHeight/3);
+  console.log('CLEAR!')
+  //fill(0);
+  // noStroke();
+  // textSize(80);
+  // text('CLEAR!',windowWidth/2,windowHeight/3);
 }
-}
+
 
             function windowResized(){
               resizeCanvas(windowWidth, windowHeight);
             }
-
-
-// fill(255,0,0);
-// noStroke();
-// rect(100,100,70,70)
-  // fill(0);
-  //  for(let i =0;i<1;i++){
-   // let rx,ry;
-   // rx=Math.floor(Math.random()*(windowWidth+1));
-   // ry=Math.floor(Math.random()*(windowHeight+1));
-
-    //  let rx=random(windowWidth)
-    //  let ry=random(windowHeight)
-    //
-    // rect(rx,ry,70,70);
-
-// }
-//   if(moving){
-//     let d=dist(mouseX, mouseY,x,y);
-//
-//     let vx=((mouseX-x)/d)*v*2;
-//     let vy=((mouseY-y)/d)*v*2;
-//
-//     x+=vx;
-//     y+=vy;
-//   }
-// }
-//
-// function keyPressed() {
-
-  // moving=!moving;
